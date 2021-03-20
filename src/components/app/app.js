@@ -8,10 +8,11 @@ import PostAddForm from "../post-add-form";
 import './app.css';
 
 const App = () => {
+    // data - simualation data from server side, id -- unique key
     const data = [
-        {label:"Going to learn React", important: true},
-        { label: "That sounds good", important: false },
-        { label: "Take a break sometimes", important: false }
+        {label:"Going to learn React", important: true, id: 'kask'},
+        { label: "That sounds good", important: false, id: 'wwq' },
+        { label: "Take a break sometimes", important: false, id: 'ddwjj' }
     ];
 
     return (

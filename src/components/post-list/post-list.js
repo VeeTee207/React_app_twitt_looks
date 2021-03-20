@@ -5,18 +5,16 @@ import "./post-list.css";
 const PostList = ({posts}) => {
     const elements = posts.map((item) => {
         return(
-            <li className='list-group-item'>
+            <li key={item.id} className='list-group-item'>
                 <PostListItem 
-                    label={item.label}
-                    important={item.important} 
+                    {...item}
+                    // label={item.label}
+                    // important={item.important} 
                 />
             </li>
         )
     })  ;
-    console.log(typeof(elements));
-    console.log(elements);
-
-
+ 
     return(
         <ul className="app-list list-group">
             {elements}
