@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import App from "./components/app/";
+import App from "./components/app/";
 
 
 // 1. Create function WhoAmI and render it
@@ -12,12 +12,12 @@ import './index.css';
 // this.state  saves inner condition , it can be everything -- active slider position, current time, etc.
 
 
-class WhoAmI extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            years: 26
-        }
+// class WhoAmI extends Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             years: 26
+//         }
 
         // this.nextYear = this.nextYear.bind(this); // 1st case
 
@@ -27,13 +27,13 @@ class WhoAmI extends Component {
         //     }));                                // 2st case
         // };                                   // 2st case
 
-    }
+    // }
 
-    nextYear = () => {                 //3rd case --experimental, classField feature
-        this.setState(state => ({           // 3st case
-            years: ++state.years,           // 3st case
-        }));                                // 3st case
-    };
+    // nextYear = () => {                 //3rd case --experimental, classField feature
+    //     this.setState(state => ({           // 3st case
+    //         years: ++state.years,           // 3st case
+    //     }));                                // 3st case
+    // };
 
     // nextYear() {                            // 1st case
     //     console.log(1);                     // 1st case
@@ -44,18 +44,18 @@ class WhoAmI extends Component {
     // }                                       // 1st case
     
 
-    render() {
-        const {name, lname, link } = this.props;
-        const {years}= this.state;
-        return (
-            <>
-                <button type="button" onClick={this.nextYear}>+++</button>
-                <h3>My name is {name}, last name- {lname}, years- {years}</h3>
-                <a href={link}>my profile</a>
-            </>
-        );
-    }
-}
+//     render() {
+//         const {name, lname, link } = this.props;
+//         const {years}= this.state;
+//         return (
+//             <>
+//                 <button type="button" onClick={this.nextYear}>+++</button>
+//                 <h3>My name is {name}, last name- {lname}, years- {years}</h3>
+//                 <a href={link}>my profile</a>
+//             </>
+//         );
+//     }
+// }
 
 
 
@@ -70,16 +70,19 @@ class WhoAmI extends Component {
 
 
 // create component All
-const All = () => {
-    return (
-        // inner components
-        <>         
-            <WhoAmI name="John" lname='Duster' link='yahoo.com' />
-            <WhoAmI name="Sam" lname='Milkind' link='facebook.com' />
-            <WhoAmI name="Pete" lname='Melonkind' link='msn.com' />
-        </>
-    )
-}
+// const All = () => {
+//     return (
+//         // inner components
+//         <>         
+//             <WhoAmI name="John" lname='Duster' link='yahoo.com' />
+//             <WhoAmI name="Sam" lname='Milkind' link='facebook.com' />
+//             <WhoAmI name="Pete" lname='Melonkind' link='msn.com' />
+//         </>
+//     )
+// }
 
 
-ReactDOM.render(<All />, document.getElementById('root'));
+// ReactDOM.render(<All />, document.getElementById('root'));
+
+
+ReactDOM.render(<App />, document.getElementById('root'));
