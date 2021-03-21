@@ -1,28 +1,41 @@
 import React from 'react';
 import PostListItem from "../post-list-item";
+import { ListGroup } from 'reactstrap';
 import "./post-list.css";
 
+
+
 const PostList = ({posts}) => {
+
     const elements = posts.map((item) => {
-        return(
-            <li key={item.id} className='list-group-item'>
-                <PostListItem 
-                    {...item}
+        
+        function isEmpty(obj) {
+            for (let key in obj) {
+                if (obj.hasOwnProperty(key))
+                    return true;
+            }
+            return false;
+        }
+    
+
+        if (typeof (item) === 'object' && isEmpty(item)) {
+        
+            return (
+                <li key={item.id} className='list-group-item'>
+                    <PostListItem
+                        {...item}
                     // label={item.label}
                     // important={item.important} 
-                />
-            </li>
-        )
+                    />
+                </li>
+            )
+        }
     })  ;
- 
+
     return(
-        <ul className="app-list list-group">
+        <ListGroup className="app-list">
             {elements}
-            {/* <PostListItem label={posts[0].label} important={posts[0].important} /> */}
-            {/* <PostListItem label='Going to learn React' important />
-            <PostListItem label='That sounds good' />
-            <PostListItem label='Take a break sometimes' /> */}
-        </ul>
+        </ListGroup>
     )
 }
 
